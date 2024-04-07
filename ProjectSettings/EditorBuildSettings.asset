@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scr/Scenes/PathLvls.unity
     guid: 55bde66b627deb94e897b233f787b3b9
   - enabled: 1
-    path: Assets/Scr/Scenes/BattleFiled.unity
+    path: Assets/Scr/Scenes/BattleField.unity
     guid: 52bd671fe5139b84d82fb49ce0dd28ef
   m_configObjects: {}

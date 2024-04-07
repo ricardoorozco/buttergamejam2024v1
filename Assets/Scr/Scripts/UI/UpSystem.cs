@@ -4,27 +4,20 @@ using UnityEngine;
 
 public class UpSystem : MonoBehaviour
 {
-    [SerializeField]
-    private float speed;
+    public float speed;
 
-    public void Start()
+    public void Update()
     {
-        //StartCoroutine(Up());
-        UpLeanTween();
+        Up();
     }
 
-    IEnumerator Up()
+    void Up()
     {
-        while (true)
-        {
-            transform.Translate(Vector3.up * Time.deltaTime * speed);
-            yield return new WaitForSeconds(0.01f);
-        }
+        transform.Translate(Vector3.up * Time.deltaTime * speed);
     }
 
-    // IEnumerator Up() but in a leantween function
-    void UpLeanTween()
+    public void SetSpeed(float newSpeed)
     {
-        LeanTween.moveLocalY(gameObject, 50, 10).setEase(LeanTweenType.easeOutBounce);
+        speed = newSpeed;
     }
 }
