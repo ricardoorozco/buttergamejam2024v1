@@ -17,6 +17,14 @@ public class BulletController : MonoBehaviour
     [SerializeField]
     private Transform target;
 
+    [SerializeField]
+    StationManager station;
+
+    void Awake()
+    {
+        station = GameObject.FindGameObjectWithTag("Player").GetComponent<StationManager>();
+    }
+
     public void Start()
     {
         Destroy(this.gameObject, destroyDelay);
@@ -30,5 +38,14 @@ public class BulletController : MonoBehaviour
         }
         
         this.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            station.TakeDamage(bulletDamage);
+            Destroy(this.gameObject);
+        }
     }
 }

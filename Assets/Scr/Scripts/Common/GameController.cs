@@ -6,6 +6,10 @@ public class GameController : MonoBehaviour
 
     public int selectedLvl;
 
+    public bool isPaused = false;
+
+    public bool isGameOver = false;
+
     private void Awake()
     {
         if (instance == null)

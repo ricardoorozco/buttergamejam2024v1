@@ -7,7 +7,10 @@ public class LookAtPlayer : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        if (!target && !GameController.instance.isGameOver)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 
     void Update()

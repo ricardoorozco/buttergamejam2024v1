@@ -35,7 +35,7 @@ public class WeaponController : MonoBehaviour
 
     public void Update()
     {
-        if (canFire)
+        if (canFire && !GameController.instance.isGameOver)
         {
             if (currentDelay > 0)
             {
@@ -59,7 +59,14 @@ public class WeaponController : MonoBehaviour
     {
         for (int i = 0; i < bulletsPerShot; i++)
         {
-            Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            if (!GameController.instance.isGameOver)
+            { 
+                Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            }
+            else
+            {                 
+                break;
+            }
             yield return new WaitForSeconds(bulletsPerShotDelay);
         }
         yield return null;

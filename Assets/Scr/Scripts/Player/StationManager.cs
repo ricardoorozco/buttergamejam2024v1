@@ -5,7 +5,7 @@ public class StationManager : MonoBehaviour
 {
     //UI
     [SerializeField]
-    private Image lifeBar;
+    private Slider lifeBar;
 
     //State
     [SerializeField]
@@ -15,14 +15,23 @@ public class StationManager : MonoBehaviour
 
     [SerializeField]
     private GameObject explosionPrefab;
+    [SerializeField]
+    private GameObject DestroyedSpaceStation;
 
     public void Awake()
     {
         life = maxLife;
     }
 
+    void Update()
+    {
+        lifeBar.value = life / maxLife;
+    }
+
     public void TakeDamage(float damage)
     {
+        Debug.Log("Damage: " + damage);
+
         life -= damage;
 
         if (life <= 0)
@@ -33,7 +42,9 @@ public class StationManager : MonoBehaviour
 
     public void Die()
     {
+        GameController.instance.isGameOver = true;
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Instantiate(DestroyedSpaceStation, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
