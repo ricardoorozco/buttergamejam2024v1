@@ -8,6 +8,8 @@ public class TurretsManager : MonoBehaviour
     private Transform zoomInPoint;
     [SerializeField]
     private Transform zoomOutPoint;
+    [SerializeField]
+    private GameObject TurretsListUI;
 
     [SerializeField]
     private GameObject[] turrets;
@@ -17,21 +19,23 @@ public class TurretsManager : MonoBehaviour
         zoomOutStation();
     }
 
-    public void zoomInStation() 
+    public void zoomInStation()
     {
+        zoomInPoint.gameObject.SetActive(false);
+        TurretsListUI.SetActive(true);
+        zoomOutPoint.gameObject.SetActive(true);
+
         Camera.main.transform.position = zoomInPoint.position;
         Camera.main.transform.rotation = zoomInPoint.rotation;
-
-        zoomInPoint.gameObject.SetActive(false);
-        zoomOutPoint.gameObject.SetActive(true);
     }
 
     public void zoomOutStation()
     {
+        TurretsListUI.SetActive(false);
+        zoomOutPoint.gameObject.SetActive(false);
+        zoomInPoint.gameObject.SetActive(true);
+
         Camera.main.transform.position = zoomOutPoint.position;
         Camera.main.transform.rotation = zoomOutPoint.rotation;
-
-        zoomInPoint.gameObject.SetActive(true);
-        zoomOutPoint.gameObject.SetActive(false);
     }
 }

@@ -1,0 +1,19 @@
+municion
+ 1. municion normal
+ 2. contra escudos
+ 3. contra nave pesada
+
+torretas
+ 1. misil
+ 2. laser
+ 3. barrera
+
+enemigos
+ 1. nave ligera (2 armas)
+     - municion normal
+ 2. nave pesada (4 armas)
+     - municion normal
+     - misil
+ 3. nave de asedio
+     - naves ligeras
+ 
