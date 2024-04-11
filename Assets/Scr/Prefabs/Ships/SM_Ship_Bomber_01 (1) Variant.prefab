@@ -84,6 +84,14 @@ PrefabInstance:
       propertyPath: canFire
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2139421120537912036, guid: f51664655acc73c41b130657d5994216, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1556493578374325350, guid: 5e08c96418abda74f93a7a4209356235, type: 3}
+    - target: {fileID: 2139421120537912036, guid: f51664655acc73c41b130657d5994216, type: 3}
+      propertyPath: isEnemyWeapon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7235171974701973449, guid: f51664655acc73c41b130657d5994216, type: 3}
       propertyPath: m_Name
       value: BulletSpawn
@@ -148,6 +156,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2139421120537912036, guid: f51664655acc73c41b130657d5994216, type: 3}
       propertyPath: canFire
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139421120537912036, guid: f51664655acc73c41b130657d5994216, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1556493578374325350, guid: 5e08c96418abda74f93a7a4209356235, type: 3}
+    - target: {fileID: 2139421120537912036, guid: f51664655acc73c41b130657d5994216, type: 3}
+      propertyPath: isEnemyWeapon
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7235171974701973449, guid: f51664655acc73c41b130657d5994216, type: 3}

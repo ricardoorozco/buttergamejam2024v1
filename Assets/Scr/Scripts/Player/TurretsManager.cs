@@ -12,7 +12,7 @@ public class TurretsManager : MonoBehaviour
     private GameObject TurretsListUI;
 
     [SerializeField]
-    private GameObject[] turrets;
+    private Turret[] turrets;
 
     private void Awake()
     {
@@ -37,5 +37,10 @@ public class TurretsManager : MonoBehaviour
 
         Camera.main.transform.position = zoomOutPoint.position;
         Camera.main.transform.rotation = zoomOutPoint.rotation;
+    }
+
+    public GameObject GetTurret(int index)
+    {
+        return turrets[index].turretPrefab;
     }
 }

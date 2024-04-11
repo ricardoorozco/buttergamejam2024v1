@@ -14,16 +14,7 @@ public class BulletController : MonoBehaviour
     [SerializeField]
     private bool isAutoAimed = false;
 
-    [SerializeField]
-    private Transform target;
-
-    [SerializeField]
-    StationManager station;
-
-    void Awake()
-    {
-        station = GameObject.FindGameObjectWithTag("Player").GetComponent<StationManager>();
-    }
+    public StationManager target;
 
     public void Start()
     {
@@ -34,7 +25,7 @@ public class BulletController : MonoBehaviour
     {
         if (isAutoAimed) 
         {
-            this.transform.LookAt(target);
+            this.transform.LookAt(target.gameObject.transform);
         }
         
         this.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
@@ -42,9 +33,9 @@ public class BulletController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (target && other.CompareTag(target.tag))
         {
-            station.TakeDamage(bulletDamage);
+            target.TakeDamage(bulletDamage);
             Destroy(this.gameObject);
         }
     }

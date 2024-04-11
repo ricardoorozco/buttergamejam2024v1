@@ -1,8 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class WeaponController : MonoBehaviour
 {
+    public StationManager target;
+
     [SerializeField]
     private BulletController bulletPrefab;
 
@@ -21,9 +24,16 @@ public class WeaponController : MonoBehaviour
     [SerializeField]
     private bool canFire = true;
 
+    [SerializeField]
+    private bool isEnemyWeapon;
+
     public void Awake()
     {
         bulletSpawnPoint = transform;
+        if(isEnemyWeapon && !GameController.instance.isGameOver)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").GetComponent<StationManager>();
+        }
     }
 
     float currentDelay = 0f;
@@ -61,7 +71,8 @@ public class WeaponController : MonoBehaviour
         {
             if (!GameController.instance.isGameOver)
             { 
-                Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                BulletController bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                bullet.target = target;
             }
             else
             {                 
