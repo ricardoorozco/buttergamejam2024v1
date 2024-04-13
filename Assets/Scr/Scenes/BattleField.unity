@@ -15507,6 +15507,11 @@ MonoBehaviour:
   nextWaveTimeText: {fileID: 6168407716013329630}
   nextWaveTimeBar: {fileID: 8833541036940546779}
   currentWave: 1
+  portalEnableEachWave: 3
+  portals:
+  - {fileID: 871448666}
+  - {fileID: 208096745}
+  - {fileID: 547049526}
 --- !u!1 &1819977236
 GameObject:
   m_ObjectHideFlags: 0

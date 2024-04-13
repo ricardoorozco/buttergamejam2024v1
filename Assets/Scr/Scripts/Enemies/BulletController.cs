@@ -33,8 +33,6 @@ public class BulletController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (target && target.tag != "Player")
-        Debug.Log("TARGET: " + target.tag + " vs OTHER: " + other.tag);
         if (target && other.CompareTag(target.tag))
         {
             target.TakeDamage(bulletDamage);

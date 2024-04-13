@@ -78,9 +78,7 @@ public class LookAtColliderEnter : MonoBehaviour
         {
             if (canFire)
             {
-                Debug.Log(target);
                 weapon.target = target.GetComponent<StationManager>();
-                Debug.Log(weapon.target);
             }
             else
             {
@@ -111,7 +109,6 @@ public class LookAtColliderEnter : MonoBehaviour
 
             foreach (Transform child in transform.GetChild(0))
             {
-                Debug.Log("child.tag: " + child.tag);
                 if (child.CompareTag("TurretWeapon"))
                 {
                     WeaponController weaponController = child.GetComponent<WeaponController>();
