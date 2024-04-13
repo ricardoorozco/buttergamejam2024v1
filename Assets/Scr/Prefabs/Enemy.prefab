@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 2177467470266340488}
   - component: {fileID: 8868389695817760806}
   - component: {fileID: 3259555493211148424}
+  - component: {fileID: 1156587194160461410}
+  - component: {fileID: 7301747007860654433}
+  - component: {fileID: 8696535802120145961}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 2800000, guid: 5089ba11ce996474eb180d6cff1861c0, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,3 +63,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeDelay: 0
   nextPoint: {fileID: 0}
+--- !u!114 &1156587194160461410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768508316280367285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c0843a108184f499cc803eb4905a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeBar: {fileID: 0}
+  life: 0
+  maxLife: 20
+  explosionPrefab: {fileID: 98710345749327436, guid: 9b3d66edb013eff42ab6e90486ba48cf, type: 3}
+  DestroyedSpaceStation: {fileID: 0}
+--- !u!65 &7301747007860654433
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768508316280367285}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 155, y: 100, z: 115}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8696535802120145961
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768508316280367285}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

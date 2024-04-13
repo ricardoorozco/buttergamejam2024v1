@@ -25,13 +25,14 @@ public class StationManager : MonoBehaviour
 
     void Update()
     {
-        lifeBar.value = life / maxLife;
+        if (lifeBar)
+        {
+            lifeBar.value = life / maxLife;
+        }
     }
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("Damage: " + damage);
-
         life -= damage;
 
         if (life <= 0)
@@ -42,9 +43,16 @@ public class StationManager : MonoBehaviour
 
     public void Die()
     {
-        GameController.instance.isGameOver = true;
+        if (CompareTag("Player"))
+        {
+            GameController.instance.isGameOver = true;
+        }
+
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        Instantiate(DestroyedSpaceStation, transform.position, Quaternion.identity);
+        if (DestroyedSpaceStation)
+        {
+            Instantiate(DestroyedSpaceStation, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3118727519541742938}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: TurretWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,12 +25,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4846226548954020375}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.63}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.50586414, y: 1.0505642, z: 2.4886222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6982283269633588923}
+  m_Father: {fileID: 486133018651149689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3118727519541742938
 MonoBehaviour:
@@ -50,7 +50,7 @@ MonoBehaviour:
   fireDelay: 0.1
   bulletsPerShot: 1
   bulletsPerShotDelay: 0
-  canFire: 1
+  canFire: 0
   isEnemyWeapon: 0
 --- !u!1 &6991967197482206622
 GameObject:
@@ -85,6 +85,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5383516702484141156}
+  - {fileID: 7522377733039525527}
+  - {fileID: 1917339553677771920}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &20394476604617097
@@ -190,8 +192,7 @@ Transform:
   m_LocalPosition: {x: 0.50586396, y: -0.021085177, z: 1.0459132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1917339553677771920}
+  m_Children: []
   m_Father: {fileID: 5383516702484141156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2728703412357216436
@@ -297,8 +298,7 @@ Transform:
   m_LocalPosition: {x: -0.50586396, y: -0.021085177, z: 1.0459132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7522377733039525527}
+  m_Children: []
   m_Father: {fileID: 5383516702484141156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &564427440665176011
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 9135960766040421130}
   m_Layer: 0
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: TurretWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -398,12 +398,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8371571555571586017}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.63}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5058642, y: 1.0505642, z: 2.4886222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5801102920810294241}
+  m_Father: {fileID: 486133018651149689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9135960766040421130
 MonoBehaviour:
@@ -423,7 +423,7 @@ MonoBehaviour:
   fireDelay: 0.1
   bulletsPerShot: 1
   bulletsPerShotDelay: 0
-  canFire: 1
+  canFire: 0
   isEnemyWeapon: 0
 --- !u!1 &9165486851833818830
 GameObject:

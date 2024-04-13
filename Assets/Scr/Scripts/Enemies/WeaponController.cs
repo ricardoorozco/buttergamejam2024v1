@@ -1,3 +1,5 @@
+
+
 using System.Collections;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
@@ -25,12 +27,15 @@ public class WeaponController : MonoBehaviour
     private bool canFire = true;
 
     [SerializeField]
+    private bool isAutoAimed;
+
+    [SerializeField]
     private bool isEnemyWeapon;
 
     public void Awake()
     {
         bulletSpawnPoint = transform;
-        if(isEnemyWeapon && !GameController.instance.isGameOver)
+        if (isEnemyWeapon && !GameController.instance.isGameOver)
         {
             target = GameObject.FindGameObjectWithTag("Player").GetComponent<StationManager>();
         }
@@ -70,16 +75,22 @@ public class WeaponController : MonoBehaviour
         for (int i = 0; i < bulletsPerShot; i++)
         {
             if (!GameController.instance.isGameOver)
-            { 
+            {
                 BulletController bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 bullet.target = target;
+                bullet.setAutoAimed(isAutoAimed);
             }
             else
-            {                 
+            {
                 break;
             }
             yield return new WaitForSeconds(bulletsPerShotDelay);
         }
         yield return null;
+    }
+
+    public void CanFireStatus(bool status)
+    {
+        canFire = status;
     }
 }

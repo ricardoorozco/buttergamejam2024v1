@@ -10,9 +10,14 @@ public class TurretsManager : MonoBehaviour
     private Transform zoomOutPoint;
     [SerializeField]
     private GameObject TurretsListUI;
+    [SerializeField]
+    private GameObject spawnTurretsListUI;
 
     [SerializeField]
-    private Turret[] turrets;
+    private GameObject[] turrets;
+
+    [SerializeField]
+    private int currentSelectedTurret = -1;
 
     private void Awake()
     {
@@ -22,6 +27,7 @@ public class TurretsManager : MonoBehaviour
     public void zoomInStation()
     {
         zoomInPoint.gameObject.SetActive(false);
+        spawnTurretsListUI.SetActive(true);
         TurretsListUI.SetActive(true);
         zoomOutPoint.gameObject.SetActive(true);
 
@@ -32,6 +38,7 @@ public class TurretsManager : MonoBehaviour
     public void zoomOutStation()
     {
         TurretsListUI.SetActive(false);
+        spawnTurretsListUI.SetActive(false);
         zoomOutPoint.gameObject.SetActive(false);
         zoomInPoint.gameObject.SetActive(true);
 
@@ -39,8 +46,19 @@ public class TurretsManager : MonoBehaviour
         Camera.main.transform.rotation = zoomOutPoint.rotation;
     }
 
-    public GameObject GetTurret(int index)
+    public GameObject GetTurret()
     {
-        return turrets[index].turretPrefab;
+        if (currentSelectedTurret >= 0 && currentSelectedTurret < turrets.Length) {
+            return turrets[currentSelectedTurret];
+        } 
+        else
+        {
+            return null;
+        }
+    }
+
+    public void SetCurrentSelectedTurret(int index)
+    {
+        currentSelectedTurret = index;
     }
 }

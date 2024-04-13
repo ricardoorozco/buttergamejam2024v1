@@ -23,7 +23,7 @@ public class BulletController : MonoBehaviour
 
     public void Update()
     {
-        if (isAutoAimed) 
+        if (isAutoAimed && target) 
         {
             this.transform.LookAt(target.gameObject.transform);
         }
@@ -33,10 +33,16 @@ public class BulletController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        if (target && target.tag != "Player")
+        Debug.Log("TARGET: " + target.tag + " vs OTHER: " + other.tag);
         if (target && other.CompareTag(target.tag))
         {
             target.TakeDamage(bulletDamage);
             Destroy(this.gameObject);
         }
+    }
+
+    public void setAutoAimed(bool autoAimed) {
+        isAutoAimed = autoAimed;
     }
 }

@@ -4841,6 +4841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1553714541799359111}
   - component: {fileID: 5210294834504767202}
+  - component: {fileID: 6891344574285721321}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -4882,3 +4883,24 @@ MonoBehaviour:
   bulletDamage: 20
   isAutoAimed: 0
   target: {fileID: 0}
+--- !u!65 &6891344574285721321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456713657802220050}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 2.2}
+  m_Center: {x: 0, y: 0, z: 0}

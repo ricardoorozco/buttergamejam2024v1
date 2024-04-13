@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2139421120537912036}
   m_Layer: 0
   m_Name: BulletSpawn
-  m_TagString: Untagged
+  m_TagString: TurretWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,9 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3d5516f9533084c80fb356b0a87ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1556493578374325350, guid: 5e08c96418abda74f93a7a4209356235, type: 3}
+  target: {fileID: 0}
+  bulletPrefab: {fileID: 0}
   bulletSpawnPoint: {fileID: 0}
   fireDelay: 1
   bulletsPerShot: 1
   bulletsPerShotDelay: 0
-  canFire: 1
+  canFire: 0
+  isEnemyWeapon: 0

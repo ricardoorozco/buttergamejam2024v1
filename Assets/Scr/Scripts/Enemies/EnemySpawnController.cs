@@ -7,12 +7,17 @@ public class EnemySpawnController : MonoBehaviour
     [SerializeField]
     private GameObject[] enemyShips;
     [SerializeField]
+    private float timeDelayStart;
+    [SerializeField]
+    private float timeDelaySpawn;
+    [SerializeField]
     private float timeDelay;
     [SerializeField]
     private float timeToNextPoint;
 
     void Start()
     {
+        timeDelay = timeDelayStart;
         this.Spawn();
     }
 
@@ -23,7 +28,7 @@ public class EnemySpawnController : MonoBehaviour
             float randomTime = Random.Range(timeDelay - 1, timeDelay + 1);
             LeanTween.delayedCall(randomTime, () =>
             {
-
+                timeDelay = timeDelaySpawn;
                 //create enemy
                 GameObject enemyGameObject = Instantiate(enemy, transform.position, Quaternion.identity);
 
