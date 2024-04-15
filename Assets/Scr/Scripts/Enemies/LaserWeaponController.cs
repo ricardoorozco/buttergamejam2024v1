@@ -1,4 +1,6 @@
 using System.Collections;
+using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LaserWeaponController : MonoBehaviour
@@ -16,6 +18,12 @@ public class LaserWeaponController : MonoBehaviour
 
     [SerializeField]
     private bool isEnemyWeapon;
+
+    [SerializeField]
+    private float damage = 10f;
+
+    [SerializeField]
+    private LayerMask targetLayer;
 
     public void Awake()
     {
@@ -35,7 +43,7 @@ public class LaserWeaponController : MonoBehaviour
         laserLine.enabled = false;
     }
 
-    public void Fire()
+    public void Update()
     {
         if (canFire && !GameController.instance.isGameOver)
         {
@@ -44,37 +52,17 @@ public class LaserWeaponController : MonoBehaviour
         else
         {
             deactivate();
-        }
-    }
-
-    public void Update()
-    {
-        Fire();
-    }
-
-    void FixedUpdate()
-    {
-        if (!laserLine.enabled || !canFire || GameController.instance.isGameOver) {
-            deactivate();
-            return; 
+            return;
         }
 
-        Ray ray = new Ray(transform.position, transform.forward);
-        bool cast = Physics.Raycast(ray, out RaycastHit hit, maxLaserDistance);
-        float zDistance = hit.distance;
+        RaycastHit hit;
 
-        if (cast)
+        if (Physics.Raycast(transform.position, transform.forward, out hit, maxLaserDistance, targetLayer))
         {
-            zDistance = hit.distance;
+            laserLine.SetPosition(0, transform.position);
+            laserLine.SetPosition(1, hit.point);
+            target.TakeDamage(damage);
         }
-        else
-        {
-            zDistance = maxLaserDistance;
-        }
-
-
-        laserLine.SetPosition(0, new Vector3(0,0,0));
-        laserLine.SetPosition(1, new Vector3(0, 0, zDistance));
     }
 
     public void CanFireStatus(bool status)

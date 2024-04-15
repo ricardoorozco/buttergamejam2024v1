@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1156587194160461410}
   - component: {fileID: 7301747007860654433}
   - component: {fileID: 8696535802120145961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 2800000, guid: 5089ba11ce996474eb180d6cff1861c0, type: 3}
@@ -127,4 +127,4 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1

@@ -24,7 +24,8 @@ public class LookAtColliderEnter : MonoBehaviour
 
     void Update()
     {
-        if (!hasChildren) {
+        if (!hasChildren)
+        {
             checkChildren();
         }
 

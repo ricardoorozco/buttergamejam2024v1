@@ -47,10 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   laserLine: {fileID: 6169778575848791360}
-  laserSpawnPoint: {fileID: 0}
-  maxLaserDistance: 40
+  maxLaserDistance: 50
   canFire: 0
   isEnemyWeapon: 0
+  damage: 10
+  targetLayerType: 1
 --- !u!120 &6169778575848791360
 LineRenderer:
   serializedVersion: 2
@@ -152,6 +153,6 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 0
+  m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1

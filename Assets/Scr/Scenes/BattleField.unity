@@ -1849,7 +1849,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208096741}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a4d3bf6623826241a938b7d468efec2, type: 3}
   m_Name: 
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   enemyShips:
   - {fileID: 198948817038408029, guid: 87700d00242e37c4db788a5224de81a0, type: 3}
   timeDelayStart: 1
-  timeDelaySpawn: 10
+  timeDelaySpawn: 1
   timeDelay: 0
   timeToNextPoint: 1
 --- !u!1001 &219924702
@@ -3721,7 +3721,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547049522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a4d3bf6623826241a938b7d468efec2, type: 3}
   m_Name: 
@@ -3730,7 +3730,7 @@ MonoBehaviour:
   enemyShips:
   - {fileID: 198948817038408029, guid: 87700d00242e37c4db788a5224de81a0, type: 3}
   timeDelayStart: 1
-  timeDelaySpawn: 15
+  timeDelaySpawn: 1
   timeDelay: 0
   timeToNextPoint: 1
 --- !u!4 &555680972 stripped
@@ -6923,7 +6923,7 @@ MonoBehaviour:
   enemyShips:
   - {fileID: 198948817038408029, guid: 87700d00242e37c4db788a5224de81a0, type: 3}
   timeDelayStart: 1
-  timeDelaySpawn: 5
+  timeDelaySpawn: 1
   timeDelay: 0
   timeToNextPoint: 1
 --- !u!1 &875152117
@@ -6936,6 +6936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875152118}
   - component: {fileID: 875152121}
+  - component: {fileID: 875152122}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -6966,6 +6967,48 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875152117}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &875152122
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875152117}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 61731bf38a6fa4d66b536bc03fc8eb3f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &878508461
 GameObject:
   m_ObjectHideFlags: 0
@@ -16005,8 +16048,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1890783342}
   - component: {fileID: 1890783344}
-  - component: {fileID: 1890783345}
   - component: {fileID: 1890783346}
+  - component: {fileID: 1890783347}
   m_Layer: 0
   m_Name: SpaceStation
   m_TagString: Player
@@ -16049,27 +16092,6 @@ MonoBehaviour:
   maxLife: 1000
   explosionPrefab: {fileID: 5323633234098830647, guid: 677528aa15f7ac34ba11cf2110d945c8, type: 3}
   DestroyedSpaceStation: {fileID: 3205408597631594737, guid: 3b4d7efcd7eba18459db9bfec3f38fab, type: 3}
---- !u!65 &1890783345
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890783341}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 500, y: 600, z: 500}
-  m_Center: {x: 0, y: -200, z: 0}
 --- !u!54 &1890783346
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16097,6 +16119,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &1890783347
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890783341}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 113
+  m_Height: 650
+  m_Direction: 1
+  m_Center: {x: 0, y: -210, z: 0}
 --- !u!1 &1906176700
 GameObject:
   m_ObjectHideFlags: 0
@@ -18632,7 +18677,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -19007,7 +19052,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -19113,7 +19158,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -19383,7 +19428,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -19473,7 +19518,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -20788,7 +20833,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
