@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ public class LvlPathInfo : MonoBehaviour
     private TMP_Text lvlUI;
     [SerializeField]
     private Image[] starsUI;
+    [SerializeField]
+    private TMP_Text scoreUI;
     [SerializeField]
     private Image lockUI;
 
@@ -23,7 +26,7 @@ public class LvlPathInfo : MonoBehaviour
 
     //state
     [SerializeField]
-    private float lvl;
+    private int lvl;
     [SerializeField]
     private bool unlock;
     [SerializeField]
@@ -32,12 +35,54 @@ public class LvlPathInfo : MonoBehaviour
     private LvlPathInfo[] unlockLvls;
     [SerializeField]
     private int stars = 0;
+    [SerializeField]
+    private int score = 0;
 
     private void Awake()
     {
-        if (unlock)
+        updateStatus();
+    }
+
+    void Start()
+    {
+        GameController.instance.isGameOver = false;
+    }
+
+    public void SetUnlock(bool unlock)
+    {
+        this.unlock = unlock;
+        lockUI.sprite = unlockSprite;
+        lvlUI.text = lvl.ToString();
+        updateStatus();
+    }
+
+    private void updateStatus()
+    {
+
+        Stage stage = DB.Instance.GetStage(lvl);
+        Stage preStage = null;
+
+        if (lvl - 1 > 0)
+        {
+            preStage = DB.Instance.GetStage(lvl - 1);
+        }
+
+        if (stage != null)
+        {
+            unlock = stage.unlock;
+            if (preStage != null)
+            {
+                unlock = preStage.complete;
+            }
+            complete = stage.complete;
+            stars = stage.stars;
+            score = stage.score;
+        }
+
+        if (unlock || preStage == null)
         {
             lvlUI.text = lvl.ToString();
+            scoreUI.text = score.ToString();
             lockUI.sprite = unlockSprite;
 
             if (complete)
@@ -51,8 +96,11 @@ public class LvlPathInfo : MonoBehaviour
                 {
                     unlockLvls[i].SetUnlock(true);
                 }
-            } else
+            }
+            else
             {
+                scoreUI.text = "0";
+
                 for (int i = 0; i < starsUI.Length; i++)
                 {
                     starsUI[i].sprite = greyStarSprite;
@@ -68,6 +116,7 @@ public class LvlPathInfo : MonoBehaviour
         {
             lvlUI.text = "";
             lockUI.sprite = lockSprite;
+            scoreUI.text = "0";
 
             for (int i = 0; i < starsUI.Length; i++)
             {
@@ -76,15 +125,16 @@ public class LvlPathInfo : MonoBehaviour
 
             for (int i = 0; i < unlockLvls.Length; i++)
             {
-                unlockLvls[i].unlock = false;
+                if (unlockLvls[i])
+                {
+                    unlockLvls[i].unlock = false;
+                }
             }
         }
     }
 
-    public void SetUnlock(bool unlock)
+    public void SetLvlGameController()
     {
-        this.unlock = unlock;
-        lockUI.sprite = unlockSprite;
-        lvlUI.text = lvl.ToString();
+        GameController.instance.SetSelectedLvl(lvl);
     }
 }

@@ -16,6 +16,8 @@ public class StageController : MonoBehaviour
     private TMP_Text nextWaveTimeText;
     [SerializeField]
     private Slider nextWaveTimeBar;
+    [SerializeField]
+    private GameObject EndGameUI;
 
     [SerializeField]
     private int currentWave = 1;
@@ -31,6 +33,8 @@ public class StageController : MonoBehaviour
 
     private void Awake()
     {
+        EndGameUI.SetActive(false);
+
         currentDelayForNextWave = delayForNextWave;
         currentTimeText.text = currentTime.ToString("F0");
         currentScoreText.text = currentScore.ToString();
@@ -40,7 +44,7 @@ public class StageController : MonoBehaviour
 
     private void Update()
     {
-        if(GameController.instance.isGameOver)
+        if (GameController.instance.isGameOver)
         {
             return;
         }
@@ -66,12 +70,34 @@ public class StageController : MonoBehaviour
 
     private void enablePortal()
     {
-        if (currentWave <= portals.Count && currentWave%portalEnableEachWave == 0) 
+        if (currentWave <= portals.Count && currentWave % portalEnableEachWave == 0)
         {
-            for (int i = 0; i < (currentWave/portalEnableEachWave)+1; i++)
+            for (int i = 0; i < (currentWave / portalEnableEachWave) + 1; i++)
             {
                 portals[i].enabled = true;
             }
         }
+    }
+
+    public void saveGame()
+    {
+        Stage stage = DB.Instance.GetStage(GameController.instance.GetSelectedLvl());
+
+        stage.unlock = true;
+        stage.stars = currentWave >= stage.lvl ? 3
+                    : currentWave >= stage.lvl / 2 ? 2
+                    : currentWave > 1 ? 1
+                    : 0;
+        stage.complete = stage.stars > 1;
+        stage.score = currentScore;
+
+        DB.Instance.SetStage(stage);
+        DB.Instance.Save();
+    }
+
+
+    public void endGame()
+    {
+        EndGameUI.SetActive(true);
     }
 }
