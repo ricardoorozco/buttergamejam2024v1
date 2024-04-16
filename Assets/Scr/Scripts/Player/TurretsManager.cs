@@ -9,6 +9,10 @@ public class TurretsManager : MonoBehaviour
     [SerializeField]
     private Transform zoomOutPoint;
     [SerializeField]
+    private Transform zoomInButton;
+    [SerializeField]
+    private Transform zoomOutButton;
+    [SerializeField]
     private GameObject TurretsListUI;
     [SerializeField]
     private GameObject spawnTurretsListUI;
@@ -26,24 +30,28 @@ public class TurretsManager : MonoBehaviour
 
     public void zoomInStation()
     {
-        zoomInPoint.gameObject.SetActive(false);
-        spawnTurretsListUI.SetActive(true);
         TurretsListUI.SetActive(true);
-        zoomOutPoint.gameObject.SetActive(true);
+        spawnTurretsListUI.SetActive(true);
+        zoomInButton.gameObject.SetActive(false);
+        zoomOutButton.gameObject.SetActive(true);
 
-        Camera.main.transform.position = zoomInPoint.position;
-        Camera.main.transform.rotation = zoomInPoint.rotation;
+        //Camera.main.transform.position = zoomInPoint.position;
+        //Camera.main.transform.rotation = zoomInPoint.rotation;
+        LeanTween.move(Camera.main.gameObject, zoomInPoint.position, 1f).setEase(LeanTweenType.easeOutQuad);
+        LeanTween.rotate(Camera.main.gameObject, zoomInPoint.rotation.eulerAngles, 1f).setEase(LeanTweenType.easeOutQuad);
     }
 
     public void zoomOutStation()
     {
         TurretsListUI.SetActive(false);
         spawnTurretsListUI.SetActive(false);
-        zoomOutPoint.gameObject.SetActive(false);
-        zoomInPoint.gameObject.SetActive(true);
+        zoomOutButton.gameObject.SetActive(false);
+        zoomInButton.gameObject.SetActive(true);
 
-        Camera.main.transform.position = zoomOutPoint.position;
-        Camera.main.transform.rotation = zoomOutPoint.rotation;
+        //Camera.main.transform.position = zoomOutPoint.position;
+        //Camera.main.transform.rotation = zoomOutPoint.rotation;
+        LeanTween.move(Camera.main.gameObject, zoomOutPoint.position, 1f).setEase(LeanTweenType.easeOutQuad);
+        LeanTween.rotate(Camera.main.gameObject, zoomOutPoint.rotation.eulerAngles, 1f).setEase(LeanTweenType.easeOutQuad);
     }
 
     public GameObject GetTurret()
