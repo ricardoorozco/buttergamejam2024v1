@@ -14,6 +14,14 @@ public class EnemySpawnController : MonoBehaviour
     private float timeDelay;
     [SerializeField]
     private float timeToNextPoint;
+    [SerializeField]
+    private int shipScore;
+
+    void Awake()
+    {
+        StageController stageController = GameObject.Find("StageController").GetComponent<StageController>();
+        shipScore = GameController.instance.GetSelectedLvl() * stageController.getWave();
+    }
 
     void Start()
     {
@@ -34,6 +42,7 @@ public class EnemySpawnController : MonoBehaviour
 
                 //set ship model as child
                 GameObject enemyShip = Instantiate(enemyShips[Random.Range(0, enemyShips.Length)], enemyGameObject.transform.position, Quaternion.identity);
+                enemyGameObject.GetComponent<StationManager>().score = shipScore;
                 enemyShip.transform.SetParent(enemyGameObject.transform);
 
                 //set and go to next point

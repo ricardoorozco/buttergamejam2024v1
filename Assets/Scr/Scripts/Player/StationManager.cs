@@ -21,13 +21,12 @@ public class StationManager : MonoBehaviour
     [SerializeField]
     private StageController stageController;
 
+    public int score = 0;
+
     public void Awake()
     {
         life = maxLife;
-        if (CompareTag("Player"))
-        {
-            stageController = GameObject.Find("StageController").GetComponent<StageController>();
-        }
+        stageController = GameObject.Find("StageController").GetComponent<StageController>();
     }
 
     void Update()
@@ -55,6 +54,10 @@ public class StationManager : MonoBehaviour
             GameController.instance.isGameOver = true;
             stageController.saveGame();
             stageController.endGame();
+        }
+        else
+        {
+            stageController.addScore(score);
         }
 
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);

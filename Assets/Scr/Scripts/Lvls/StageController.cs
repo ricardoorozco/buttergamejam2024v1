@@ -36,7 +36,9 @@ public class StageController : MonoBehaviour
         EndGameUI.SetActive(false);
 
         currentDelayForNextWave = delayForNextWave;
-        currentTimeText.text = currentTime.ToString("F0");
+        int minutes = Mathf.FloorToInt(currentTime / 60F);
+        int seconds = Mathf.FloorToInt(currentTime - minutes * 60);
+        currentTimeText.text = minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
         currentScoreText.text = currentScore.ToString();
         currentWaveText.text = currentWave.ToString();
         nextWaveTimeText.text = currentDelayForNextWave.ToString("F0");
@@ -50,7 +52,9 @@ public class StageController : MonoBehaviour
         }
 
         currentTime += Time.deltaTime;
-        currentTimeText.text = currentTime.ToString("F0");
+        int minutes = Mathf.FloorToInt(currentTime / 60F);
+        int seconds = Mathf.FloorToInt(currentTime - minutes * 60);
+        currentTimeText.text = minutes.ToString().PadLeft(2, '0') + ":" + seconds.ToString().PadLeft(2, '0');
         currentDelayForNextWave -= Time.deltaTime;
         nextWaveTimeBar.value = currentDelayForNextWave / delayForNextWave;
         nextWaveTimeText.text = currentDelayForNextWave.ToString("F0");
@@ -99,5 +103,15 @@ public class StageController : MonoBehaviour
     public void endGame()
     {
         EndGameUI.SetActive(true);
+    }
+
+    public void addScore(int score)
+    {
+        currentScore += score;
+    }
+
+    public int getWave()
+    {
+        return currentWave;
     }
 }
