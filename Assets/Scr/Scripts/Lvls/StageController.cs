@@ -11,6 +11,8 @@ public class StageController : MonoBehaviour
     [SerializeField]
     private TMP_Text currentScoreText;
     [SerializeField]
+    private TMP_Text totalScoreText;
+    [SerializeField]
     private TMP_Text currentSupplyText;
     [SerializeField]
     private TMP_Text currentWaveText;
@@ -115,7 +117,7 @@ public class StageController : MonoBehaviour
                     : currentWave > 1 ? 1
                     : 0;
         stage.complete = stage.stars > 1;
-        stage.score = currentScore;
+        stage.score = currentScore + currentSupply;
 
         DB.Instance.SetStage(stage);
         DB.Instance.Save();
@@ -125,6 +127,23 @@ public class StageController : MonoBehaviour
     public void endGame()
     {
         EndGameUI.SetActive(true);
+
+        LeanTween.delayedCall(2, () =>
+        {
+            LeanTween.value(0, currentScore, 2).setOnUpdate((float val) =>
+            {
+                currentScoreText.text = (currentScore-(int)val).ToString();
+                totalScoreText.text = ((int)val).ToString();
+            });
+            LeanTween.delayedCall(3, () =>
+            {
+                LeanTween.value(0, currentSupply, 2).setOnUpdate((float val) =>
+                {
+                    currentSupplyText.text = (currentSupply - (int)val).ToString();
+                    totalScoreText.text = (currentScore+(int)val).ToString();
+                });
+            });
+        });
     }
 
     public void addScore(int score)
