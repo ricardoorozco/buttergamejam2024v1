@@ -11,12 +11,16 @@ public class StationManager : MonoBehaviour
     [SerializeField]
     private float life;
     [SerializeField]
+    private bool isLiving = true;
+    [SerializeField]
     private float maxLife;
 
     [SerializeField]
     private GameObject explosionPrefab;
     [SerializeField]
     private GameObject DestroyedSpaceStation;
+    [SerializeField]
+    private GameObject SupplyPrefab;
 
     [SerializeField]
     private StageController stageController;
@@ -41,30 +45,28 @@ public class StationManager : MonoBehaviour
     {
         life -= damage;
 
-        if (life <= 0)
+        if (isLiving && life <= 0)
         {
+            isLiving = false;
             Die();
         }
     }
 
     public void Die()
     {
+        Destroy(gameObject);
         if (CompareTag("Player"))
         {
             GameController.instance.isGameOver = true;
             stageController.saveGame();
             stageController.endGame();
+            Instantiate(DestroyedSpaceStation, transform.position, Quaternion.identity);
         }
         else
         {
             stageController.addScore(score);
+            Instantiate(SupplyPrefab, transform.position, Quaternion.identity);
         }
-
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        if (DestroyedSpaceStation)
-        {
-            Instantiate(DestroyedSpaceStation, transform.position, Quaternion.identity);
-        }
-        Destroy(gameObject);
     }
 }

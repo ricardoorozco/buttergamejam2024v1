@@ -11,6 +11,8 @@ public class StageController : MonoBehaviour
     [SerializeField]
     private TMP_Text currentScoreText;
     [SerializeField]
+    private TMP_Text currentSupplyText;
+    [SerializeField]
     private TMP_Text currentWaveText;
     [SerializeField]
     private TMP_Text nextWaveTimeText;
@@ -21,9 +23,12 @@ public class StageController : MonoBehaviour
 
     [SerializeField]
     private int currentWave = 1;
+    [SerializeField]
     private float delayForNextWave = 20;
     private float currentDelayForNextWave = 0;
     private int currentScore = 0;
+    [SerializeField]
+    private int currentSupply = 0;
     private float currentTime = 0;
     [SerializeField]
     private int portalEnableEachWave = 1;
@@ -42,6 +47,7 @@ public class StageController : MonoBehaviour
         currentScoreText.text = currentScore.ToString();
         currentWaveText.text = currentWave.ToString();
         nextWaveTimeText.text = currentDelayForNextWave.ToString("F0");
+        currentSupplyText.text = currentSupply.ToString();
     }
 
     private void Update()
@@ -60,6 +66,7 @@ public class StageController : MonoBehaviour
         nextWaveTimeText.text = currentDelayForNextWave.ToString("F0");
 
         currentScoreText.text = currentScore.ToString();
+        currentSupplyText.text = currentSupply.ToString();
 
         if (currentDelayForNextWave < 0)
         {
@@ -74,11 +81,26 @@ public class StageController : MonoBehaviour
 
     private void enablePortal()
     {
-        if (currentWave <= portals.Count && currentWave % portalEnableEachWave == 0)
+        delayForNextWave = delayForNextWave - 1 > 5 ? delayForNextWave - 1 : 5;
+
+        for (int i = 0; i < portals.Count; i++)
         {
-            for (int i = 0; i < (currentWave / portalEnableEachWave) + 1; i++)
+            float newTimeDelay = portals[i].timeDelaySpawn * currentWave / 100;
+            portals[i].timeDelaySpawn = portals[i].timeDelaySpawn - newTimeDelay < 0 ? 0 : portals[i].timeDelaySpawn - newTimeDelay;
+        }
+
+        int portalsEnables = currentWave % portalEnableEachWave;
+
+        if (portalsEnables == 0)
+        {
+            portalsEnables = (currentWave / portalEnableEachWave) + 1;
+
+            if (portalsEnables <= portals.Count)
             {
-                portals[i].enabled = true;
+                for (int i = 0; i < portalsEnables; i++)
+                {
+                    portals[i].enabled = true;
+                }
             }
         }
     }
@@ -108,6 +130,16 @@ public class StageController : MonoBehaviour
     public void addScore(int score)
     {
         currentScore += score;
+    }
+
+    public void addSupply(int score)
+    {
+        currentSupply += score;
+    }
+
+    public int getSupply()
+    {
+        return currentSupply;
     }
 
     public int getWave()

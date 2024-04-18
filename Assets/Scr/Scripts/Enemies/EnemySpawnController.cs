@@ -8,8 +8,7 @@ public class EnemySpawnController : MonoBehaviour
     private GameObject[] enemyShips;
     [SerializeField]
     private float timeDelayStart;
-    [SerializeField]
-    private float timeDelaySpawn;
+    public float timeDelaySpawn;
     [SerializeField]
     private float timeDelay;
     [SerializeField]
@@ -33,19 +32,16 @@ public class EnemySpawnController : MonoBehaviour
     {
         if (!GameController.instance.isGameOver)
         {
-            float randomTime = Random.Range(timeDelay - 1, timeDelay + 1);
-            LeanTween.delayedCall(randomTime, () =>
+            LeanTween.delayedCall(timeDelay, () =>
             {
                 timeDelay = timeDelaySpawn;
-                //create enemy
+
                 GameObject enemyGameObject = Instantiate(enemy, transform.position, Quaternion.identity);
 
-                //set ship model as child
                 GameObject enemyShip = Instantiate(enemyShips[Random.Range(0, enemyShips.Length)], enemyGameObject.transform.position, Quaternion.identity);
                 enemyGameObject.GetComponent<StationManager>().score = shipScore;
                 enemyShip.transform.SetParent(enemyGameObject.transform);
 
-                //set and go to next point
                 EnemyFollowPathController enemyFollowPathController = enemyGameObject.GetComponent<EnemyFollowPathController>();
                 enemyFollowPathController.SetNextPoint(this.transform.GetComponent<PathInfo>().GetNextPoint());
                 enemyFollowPathController.SetTimeDelay(timeToNextPoint);

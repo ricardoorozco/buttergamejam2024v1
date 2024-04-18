@@ -16,8 +16,26 @@ public class BulletController : MonoBehaviour
 
     public StationManager target;
 
+    public StageController stageController;
+
+    [SerializeField]
+    private bool isSupply = false;
+
+    void Awake()
+    {
+        stageController = GameObject.Find("StageController").GetComponent<StageController>();
+        if (isSupply) {
+            target = GameObject.FindGameObjectWithTag("Player").GetComponent<StationManager>();
+        }
+    }
+
     public void Start()
     {
+        if (isSupply)
+        {
+            LeanTween.alpha(this.gameObject, 0.1f, destroyDelay);
+        }
+        
         Destroy(this.gameObject, destroyDelay);
     }
 
@@ -27,13 +45,26 @@ public class BulletController : MonoBehaviour
         {
             this.transform.LookAt(target.gameObject.transform);
         }
-        
-        this.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
+
+        if (!isSupply)
+        {
+            this.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
+        }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (target && other.CompareTag(target.tag))
+        if (GameController.instance.isGameOver)
+        {
+            return;
+        }
+
+        if (isSupply && other.CompareTag(target.tag))
+        {
+            stageController.addSupply((int)bulletDamage);
+            Destroy(this.gameObject);
+        }
+        else if (target && other.CompareTag(target.tag))
         {
             target.TakeDamage(bulletDamage);
             Destroy(this.gameObject);
@@ -42,5 +73,12 @@ public class BulletController : MonoBehaviour
 
     public void setAutoAimed(bool autoAimed) {
         isAutoAimed = autoAimed;
+    }
+
+    private void OnMouseOver()
+    {
+        if (isSupply && !GameController.instance.isGameOver) {
+            LeanTween.move(this.gameObject, target.transform.position, 0.5f);
+        }
     }
 }

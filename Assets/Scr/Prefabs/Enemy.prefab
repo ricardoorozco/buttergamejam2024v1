@@ -79,7 +79,10 @@ MonoBehaviour:
   life: 0
   maxLife: 20
   explosionPrefab: {fileID: 98710345749327436, guid: 9b3d66edb013eff42ab6e90486ba48cf, type: 3}
-  DestroyedSpaceStation: {fileID: 0}
+  DestroyedSpaceStation: {fileID: 3205408597631594737, guid: 3b4d7efcd7eba18459db9bfec3f38fab, type: 3}
+  SupplyPrefab: {fileID: 6274139904052031959, guid: 6515ff8aeb58c2d4a9792dee82f8ad9a, type: 3}
+  stageController: {fileID: 0}
+  score: 0
 --- !u!65 &7301747007860654433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95,7 +98,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2277016239440994685}
   - component: {fileID: 7684470528490433073}
   - component: {fileID: 1898967663254045176}
+  - component: {fileID: 6460436083857065291}
   m_Layer: 0
   m_Name: MissileLauncher
   m_TagString: Untagged
@@ -191,6 +192,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43043793431104772, guid: b9b845662f4ccba49b124cad8d2bbd99, type: 2}
+--- !u!114 &6460436083857065291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654563185804446854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92e072988af1b9439d54f290a46d8fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretType: 1
+  cost: 15
 --- !u!1 &2239423317237175957
 GameObject:
   m_ObjectHideFlags: 0

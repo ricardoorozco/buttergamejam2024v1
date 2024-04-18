@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Turret", menuName = "Turret")]
-public class Turret : ScriptableObject
+public class Turret : MonoBehaviour
 {
     public enum TurretType
     {
@@ -13,6 +12,5 @@ public class Turret : ScriptableObject
     }
 
     public TurretType turretType;
-    public GameObject turretPrefab;
     public int cost;
 }
