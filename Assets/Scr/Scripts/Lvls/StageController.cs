@@ -165,4 +165,9 @@ public class StageController : MonoBehaviour
     {
         return currentWave;
     }
+
+    public void forceGameOver()
+    {
+        GameController.instance.isGameOver = true;
+    }
 }

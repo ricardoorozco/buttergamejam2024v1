@@ -37,8 +37,12 @@ public class LvlPathInfo : MonoBehaviour
     [SerializeField]
     private int score = 0;
 
+    [SerializeField]
+    private Button button;
+
     private void Awake()
     {
+        button.enabled = this.unlock;
         updateStatus();
     }
 
@@ -68,18 +72,19 @@ public class LvlPathInfo : MonoBehaviour
 
         if (stage != null)
         {
-            unlock = stage.unlock;
+            this.unlock = stage.unlock;
             if (preStage != null)
             {
-                unlock = preStage.complete;
+                this.unlock = preStage.complete;
             }
             complete = stage.complete;
             stars = stage.stars;
             score = stage.score;
         }
 
-        if (unlock || preStage == null)
+        if (this.unlock || preStage == null)
         {
+            button.enabled = true;
             lvlUI.text = lvl.ToString();
             scoreUI.text = score.ToString();
             lockUI.sprite = unlockSprite;
@@ -113,6 +118,7 @@ public class LvlPathInfo : MonoBehaviour
         }
         else
         {
+            button.enabled = false;
             lvlUI.text = "";
             lockUI.sprite = lockSprite;
             scoreUI.text = "0";

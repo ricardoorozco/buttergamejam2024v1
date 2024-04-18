@@ -101,8 +101,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 6551
-      y: 3216
+      x: 6496
+      y: 2682
       width: 85
       height: 82
     spriteID: 43debc183011e9e49b648b9e3e5c538b
@@ -113,7 +113,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 6551, y: 3216}
+    uvTransform: {x: 6496, y: 2682}
     spritePosition: {x: 1655, y: 2109}
   - name: YellowStar
     originalName: 
@@ -122,8 +122,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 6644
-      y: 3216
+      x: 6589
+      y: 2682
       width: 85
       height: 82
     spriteID: 6628cfc069dfb4744bc3b2cfec89589c
@@ -134,7 +134,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 6644, y: 3216}
+    uvTransform: {x: 6589, y: 2682}
     spritePosition: {x: 1673, y: 295}
   - name: StarBorder
     originalName: 
@@ -143,8 +143,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 6262
-      y: 3216
+      x: 6012
+      y: 2916
       width: 281
       height: 100
     spriteID: ef0c902f72d2e49408b4c85f9b57f88b
@@ -155,7 +155,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 6262, y: 3216}
+    uvTransform: {x: 6012, y: 2916}
     spritePosition: {x: 1486, y: 286}
   - name: LvlUnlock
     originalName: 
@@ -164,8 +164,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 6012
-      y: 3450
+      x: 6262
+      y: 2682
       width: 226
       height: 217
     spriteID: dd01d21ac5b8f7c4a8b8d759a9dce224
@@ -176,7 +176,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 6012, y: 3450}
+    uvTransform: {x: 6262, y: 2682}
     spritePosition: {x: 1156, y: 252}
   - name: LvlLock
     originalName: 
@@ -186,7 +186,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 6012
-      y: 3216
+      y: 2682
       width: 242
       height: 226
     spriteID: bf217ad26888a3e469d1c927c8f3bd6d
@@ -197,8 +197,176 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 6012, y: 3216}
+    uvTransform: {x: 6012, y: 2682}
     spritePosition: {x: 1135, y: 2059}
+  - name: Lvl1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6012
+      y: 4
+      width: 740
+      height: 702
+    spriteID: 80fbd6f45ea615845b6df96a58e12e46
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6012, y: 4}
+    spritePosition: {x: 1131, y: 203}
+  - name: Lvl2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6760
+      y: 630
+      width: 706
+      height: 612
+    spriteID: 9ffd4529b89634342b4c072ca2e7359f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6760, y: 630}
+    spritePosition: {x: 2987, y: 405}
+  - name: Lvl3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6012
+      y: 714
+      width: 710
+      height: 676
+    spriteID: 9536fbecc8a3bb142b0593d847a3988f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6012, y: 714}
+    spritePosition: {x: 4891, y: 333}
+  - name: Lvl4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6760
+      y: 4
+      width: 708
+      height: 618
+    spriteID: 837a6caaf0ebbc34d97b6f9ecf7e3ef6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6760, y: 4}
+    spritePosition: {x: 4091, y: 1063}
+  - name: Lvl5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6012
+      y: 2048
+      width: 706
+      height: 626
+    spriteID: eb3647293189eaa40bfe92028da86ccc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6012, y: 2048}
+    spritePosition: {x: 1883, y: 905}
+  - name: Lvl6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6760
+      y: 1250
+      width: 701
+      height: 616
+    spriteID: 162c08f44440828498d282835ffeccb6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6760, y: 1250}
+    spritePosition: {x: 1115, y: 2017}
+  - name: Lvl7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6760
+      y: 1874
+      width: 702
+      height: 588
+    spriteID: 91be3e881d66f7347af4e257b67b172e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6760, y: 1874}
+    spritePosition: {x: 2979, y: 1717}
+  - name: Lvl8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6012
+      y: 1398
+      width: 704
+      height: 642
+    spriteID: 15d7d55f65551ef4999a6fa268308db3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6012, y: 1398}
+    spritePosition: {x: 4907, y: 1999}
   - name: Capa 0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -219,27 +387,6 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: Capa 2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 3216
-      width: 281
-      height: 100
-    spriteID: 3aa958d8fcfae3e4b841abdff8ddaf35
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 3216}
     spritePosition: {x: 0, y: 0}
   characterData:
     bones: []
@@ -355,7 +502,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 43debc183011e9e49b648b9e3e5c538b
     layerID: 5
-    mosaicPosition: {x: 6551, y: 3216}
+    mosaicPosition: {x: 6496, y: 2682}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -365,7 +512,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 6628cfc069dfb4744bc3b2cfec89589c
     layerID: 6
-    mosaicPosition: {x: 6644, y: 3216}
+    mosaicPosition: {x: 6589, y: 2682}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -375,7 +522,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: ef0c902f72d2e49408b4c85f9b57f88b
     layerID: 2
-    mosaicPosition: {x: 6262, y: 3216}
+    mosaicPosition: {x: 6012, y: 2916}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -385,7 +532,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: dd01d21ac5b8f7c4a8b8d759a9dce224
     layerID: 7
-    mosaicPosition: {x: 6012, y: 3450}
+    mosaicPosition: {x: 6262, y: 2682}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -395,7 +542,87 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: bf217ad26888a3e469d1c927c8f3bd6d
     layerID: 8
-    mosaicPosition: {x: 6012, y: 3216}
+    mosaicPosition: {x: 6012, y: 2682}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lvl1
+    spriteName: Lvl1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 80fbd6f45ea615845b6df96a58e12e46
+    layerID: 12
+    mosaicPosition: {x: 6012, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lvl2
+    spriteName: Lvl2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9ffd4529b89634342b4c072ca2e7359f
+    layerID: 13
+    mosaicPosition: {x: 6760, y: 630}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lvl3
+    spriteName: Lvl3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9536fbecc8a3bb142b0593d847a3988f
+    layerID: 14
+    mosaicPosition: {x: 6012, y: 714}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lvl4
+    spriteName: Lvl4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 837a6caaf0ebbc34d97b6f9ecf7e3ef6
+    layerID: 15
+    mosaicPosition: {x: 6760, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lvl5
+    spriteName: Lvl5
+    isGroup: 0
+    parentIndex: -1
+    spriteID: eb3647293189eaa40bfe92028da86ccc
+    layerID: 16
+    mosaicPosition: {x: 6012, y: 2048}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lvl6
+    spriteName: Lvl6
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 162c08f44440828498d282835ffeccb6
+    layerID: 17
+    mosaicPosition: {x: 6760, y: 1250}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lvl7
+    spriteName: Lvl7
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 91be3e881d66f7347af4e257b67b172e
+    layerID: 18
+    mosaicPosition: {x: 6760, y: 1874}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lvl8
+    spriteName: Lvl8
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 15d7d55f65551ef4999a6fa268308db3
+    layerID: 19
+    mosaicPosition: {x: 6012, y: 1398}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -406,16 +633,6 @@ ScriptedImporter:
     spriteID: a8f17b64d04f54a479659f838f1b18e7
     layerID: 4
     mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Capa 2
-    spriteName: Capa 2
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 3aa958d8fcfae3e4b841abdff8ddaf35
-    layerID: 3
-    mosaicPosition: {x: 4, y: 3216}
     flatten: 0
     isImported: 1
     isVisible: 1

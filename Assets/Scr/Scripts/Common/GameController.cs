@@ -33,4 +33,10 @@ public class GameController : MonoBehaviour
     {
         return selectedLvl;
     }
+
+    public void PauseGame(int timeScale)
+    {
+        isPaused = timeScale > 0 ? false : true;
+        Time.timeScale = timeScale;
+    }
 }
