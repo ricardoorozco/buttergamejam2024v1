@@ -38,6 +38,11 @@ public class StageController : MonoBehaviour
     [SerializeField]
     private List<EnemySpawnController> portals;
 
+    [SerializeField]
+    private AudioSource musicSource;
+    [SerializeField]
+    private List<AudioClip> musicList;
+
     private void Awake()
     {
         EndGameUI.SetActive(false);
@@ -50,6 +55,13 @@ public class StageController : MonoBehaviour
         currentWaveText.text = currentWave.ToString();
         nextWaveTimeText.text = currentDelayForNextWave.ToString("F0");
         currentSupplyText.text = currentSupply.ToString();
+
+        musicSource.clip = musicList[GameController.instance.GetSelectedLvl()-1];
+    }
+    void Start()
+    {
+        musicSource.outputAudioMixerGroup = GameController.instance.musicMixer;
+        musicSource.Play();
     }
 
     private void Update()

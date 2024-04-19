@@ -51,4 +51,7 @@ MonoBehaviour:
   bulletsPerShot: 1
   bulletsPerShotDelay: 0
   canFire: 0
+  isAutoAimed: 0
   isEnemyWeapon: 0
+  fireSource: {fileID: 0}
+  fireSound: {fileID: 0}

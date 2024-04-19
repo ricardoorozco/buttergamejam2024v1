@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UpSystem : MonoBehaviour
@@ -8,16 +6,21 @@ public class UpSystem : MonoBehaviour
 
     public void Update()
     {
-        Up();
+        this.Up();
     }
 
     void Up()
     {
-        transform.Translate(Vector3.up * Time.deltaTime * speed);
+        this.transform.Translate(Vector3.up * Time.deltaTime * this.speed);
     }
 
     public void SetSpeed(float newSpeed)
     {
-        speed = newSpeed;
+        this.speed = newSpeed;
+    }
+
+    public void AddSpeed(float speed)
+    {
+        this.speed += speed;
     }
 }

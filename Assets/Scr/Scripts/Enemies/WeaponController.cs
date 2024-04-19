@@ -32,12 +32,27 @@ public class WeaponController : MonoBehaviour
     [SerializeField]
     private bool isEnemyWeapon;
 
+    [SerializeField]
+    private AudioSource fireSource;
+
+    [SerializeField]
+    private AudioClip fireSound;
+
     public void Awake()
     {
         bulletSpawnPoint = transform;
         if (isEnemyWeapon && !GameController.instance.isGameOver)
         {
             target = GameObject.FindGameObjectWithTag("Player").GetComponent<StationManager>();
+            fireSource = GameObject.Find("EnemyFxSource").GetComponent<AudioSource>();
+        }
+        else
+        {
+            fireSource = GameObject.Find("TurretFxSource").GetComponent<AudioSource>();
+        }
+        if (fireSound)
+        {
+            fireSource.clip = fireSound;
         }
     }
 
@@ -76,9 +91,41 @@ public class WeaponController : MonoBehaviour
         {
             if (!GameController.instance.isGameOver)
             {
+                bool canToSound = false;
+                if (isEnemyWeapon && GameController.instance.totalEnemyWeaponsSounds < GameController.instance.maxEnemyWeaponsSounds)
+                {
+                    GameController.instance.totalEnemyWeaponsSounds++;
+                    canToSound = true;
+                    fireSource.PlayOneShot(fireSound);
+                }
+                else if(!isEnemyWeapon && GameController.instance.totalTurretWeaponsSounds < GameController.instance.maxTurretWeaponsSounds)
+                {
+                    GameController.instance.totalTurretWeaponsSounds++;
+                    canToSound = true;
+                    
+                }
+                if (canToSound) 
+                {
+                    fireSource.PlayOneShot(fireSound);
+                }
                 BulletController bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 bullet.target = target;
                 bullet.setAutoAimed(isAutoAimed);
+
+                if (isEnemyWeapon && canToSound)
+                {
+                    LeanTween.delayedCall(0.2f, () =>
+                    {
+                        GameController.instance.totalEnemyWeaponsSounds--;
+                    });
+                }
+                else if (!isEnemyWeapon && canToSound)
+                {
+                    LeanTween.delayedCall(0.2f, () =>
+                    {
+                        GameController.instance.totalTurretWeaponsSounds--;
+                    });
+                }
             }
             else
             {

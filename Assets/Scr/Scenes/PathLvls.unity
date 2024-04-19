@@ -1792,6 +1792,9 @@ MonoBehaviour:
   selectedLvl: 0
   isPaused: 0
   isGameOver: 0
+  musicMixer: {fileID: -7215802772031381005, guid: 3171134755921b047b9acf8004aa9c56, type: 2}
+  turretMixer: {fileID: 6397354822487600809, guid: 3171134755921b047b9acf8004aa9c56, type: 2}
+  enemyMixer: {fileID: 8275631571639396231, guid: 3171134755921b047b9acf8004aa9c56, type: 2}
 --- !u!1 &1047451726
 GameObject:
   m_ObjectHideFlags: 0

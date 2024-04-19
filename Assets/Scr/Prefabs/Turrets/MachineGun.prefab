@@ -53,6 +53,8 @@ MonoBehaviour:
   canFire: 0
   isAutoAimed: 0
   isEnemyWeapon: 0
+  fireSource: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: 7c333d595a42f7b4d93c3ec6b86af087, type: 3}
 --- !u!1 &6991967197482206622
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +444,8 @@ MonoBehaviour:
   canFire: 0
   isAutoAimed: 0
   isEnemyWeapon: 0
+  fireSource: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: 7c333d595a42f7b4d93c3ec6b86af087, type: 3}
 --- !u!1 &9165486851833818830
 GameObject:
   m_ObjectHideFlags: 0

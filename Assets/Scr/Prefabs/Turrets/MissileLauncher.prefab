@@ -366,3 +366,5 @@ MonoBehaviour:
   canFire: 0
   isAutoAimed: 1
   isEnemyWeapon: 0
+  fireSource: {fileID: 0}
+  fireSound: {fileID: 0}
