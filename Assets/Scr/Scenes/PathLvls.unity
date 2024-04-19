@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 8060088917269616737, guid: 55d15a746293c1d4abcf47bffaf728e6, type: 3}
+    - target: {fileID: 3527689596747266261, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5735f1cb8c470a444ba5b8c447b26f0a, type: 3}
     - target: {fileID: 4071815366554396788, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.88500005
@@ -556,6 +560,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1362478951558720431, guid: 55d15a746293c1d4abcf47bffaf728e6, type: 3}
+    - target: {fileID: 3527689596747266261, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5735f1cb8c470a444ba5b8c447b26f0a, type: 3}
     - target: {fileID: 4071815366554396788, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.9491229
@@ -765,6 +773,9 @@ GameObject:
   - component: {fileID: 634492010}
   - component: {fileID: 634492009}
   - component: {fileID: 634492008}
+  - component: {fileID: 634492013}
+  - component: {fileID: 634492012}
+  - component: {fileID: 634492011}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -886,6 +897,161 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634492006}
   m_CullTransparentMesh: 1
+--- !u!114 &634492011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634492006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 634492012}
+          m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+          m_MethodName: mouseOverFx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 634492012}
+          m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+          m_MethodName: mouseExitFx
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &634492012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634492006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f181c94eb8362ef4eaa5aaef8f1f2599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonFxSounds: {fileID: 0}
+  hoverSound: {fileID: 8300000, guid: 5735f1cb8c470a444ba5b8c447b26f0a, type: 3}
+--- !u!82 &634492013
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634492006}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &756457822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -986,6 +1152,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 926349699118186495, guid: 55d15a746293c1d4abcf47bffaf728e6, type: 3}
+    - target: {fileID: 3527689596747266261, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5735f1cb8c470a444ba5b8c447b26f0a, type: 3}
     - target: {fileID: 4071815366554396788, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.88500005
@@ -1551,6 +1721,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1159648225124459282, guid: 55d15a746293c1d4abcf47bffaf728e6, type: 3}
+    - target: {fileID: 3527689596747266261, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5735f1cb8c470a444ba5b8c447b26f0a, type: 3}
     - target: {fileID: 4071815366554396788, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.8782405
@@ -1795,6 +1969,10 @@ MonoBehaviour:
   musicMixer: {fileID: -7215802772031381005, guid: 3171134755921b047b9acf8004aa9c56, type: 2}
   turretMixer: {fileID: 6397354822487600809, guid: 3171134755921b047b9acf8004aa9c56, type: 2}
   enemyMixer: {fileID: 8275631571639396231, guid: 3171134755921b047b9acf8004aa9c56, type: 2}
+  maxEnemyWeaponsSounds: 5
+  maxTurretWeaponsSounds: 5
+  totalEnemyWeaponsSounds: 0
+  totalTurretWeaponsSounds: 0
 --- !u!1 &1047451726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,6 +2268,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -6038951132840703402, guid: 55d15a746293c1d4abcf47bffaf728e6, type: 3}
+    - target: {fileID: 3527689596747266261, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5735f1cb8c470a444ba5b8c447b26f0a, type: 3}
     - target: {fileID: 4071815366554396788, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.8662149
@@ -2364,6 +2546,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3269790930003459190, guid: 55d15a746293c1d4abcf47bffaf728e6, type: 3}
+    - target: {fileID: 3527689596747266261, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5735f1cb8c470a444ba5b8c447b26f0a, type: 3}
     - target: {fileID: 4071815366554396788, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.88475585
@@ -2669,6 +2855,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2598297253067534979, guid: 55d15a746293c1d4abcf47bffaf728e6, type: 3}
+    - target: {fileID: 3527689596747266261, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5735f1cb8c470a444ba5b8c447b26f0a, type: 3}
     - target: {fileID: 4071815366554396788, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.9288608
@@ -2953,6 +3143,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.04309845
       objectReference: {fileID: 0}
+    - target: {fileID: 3527689596747266261, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5735f1cb8c470a444ba5b8c447b26f0a, type: 3}
     - target: {fileID: 4071815366554396788, guid: 8382a348388d8234cbf74ea11cc8a99c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.8427902
