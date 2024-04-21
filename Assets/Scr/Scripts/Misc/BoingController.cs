@@ -17,27 +17,27 @@ public class BoingController : MonoBehaviour
 
     void Awake()
     {
-        initial = transform.position;
+        initial = transform.localPosition;
     }
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, target) < 0.1f)
+        if (Vector3.Distance(transform.localPosition, target) < 0.01f)
         {
             goToTarget = false;
         }
-        else if(Vector3.Distance(transform.position, initial) < 0.1f)
+        else if(Vector3.Distance(transform.localPosition, initial) < 0.01f)
         {
             goToTarget = true;
         }
 
         if (goToTarget)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, speed);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, target, speed);
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, initial, speed);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, initial, speed);
         }
     }
 }

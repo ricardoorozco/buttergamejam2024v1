@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2440560713725384640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1430429580455564303}
+  - component: {fileID: 4512653813108499640}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1430429580455564303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440560713725384640}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 972.4337, y: 333.50824, z: 4.303612}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4512653813108499640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440560713725384640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf5286e342c45a4db207d3bab91bbd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedLvl: 1
+  isPaused: 0
+  isGameOver: 0
+  musicMixer: {fileID: -7215802772031381005, guid: 3171134755921b047b9acf8004aa9c56, type: 2}
+  turretMixer: {fileID: 6397354822487600809, guid: 3171134755921b047b9acf8004aa9c56, type: 2}
+  enemyMixer: {fileID: 8275631571639396231, guid: 3171134755921b047b9acf8004aa9c56, type: 2}
+  maxEnemyWeaponsSounds: 2
+  maxTurretWeaponsSounds: 2
+  totalEnemyWeaponsSounds: 0
+  totalTurretWeaponsSounds: 0
